@@ -3,12 +3,13 @@ import json
 from typing import List, Iterable, Union
 
 from wai.logging import LOGGING_WARNING
+from seppl import PlaceholderSupporter, placeholder_list
 from seppl.io import locate_files
 from idc.api import ImageClassificationData, locate_image
 from idc.api import Reader
 
 
-class LabelMeImageClassificationReader(Reader):
+class LabelMeImageClassificationReader(Reader, PlaceholderSupporter):
 
     def __init__(self, source: Union[str, List[str]] = None, source_list: Union[str, List[str]] = None,
                  logger_name: str = None, logging_level: str = LOGGING_WARNING):
@@ -54,8 +55,8 @@ class LabelMeImageClassificationReader(Reader):
         :rtype: argparse.ArgumentParser
         """
         parser = super()._create_argparser()
-        parser.add_argument("-i", "--input", type=str, help="Path to the json file(s) to read; glob syntax is supported", required=False, nargs="*")
-        parser.add_argument("-I", "--input_list", type=str, help="Path to the text file(s) listing the json files to use", required=False, nargs="*")
+        parser.add_argument("-i", "--input", type=str, help="Path to the json file(s) to read; glob syntax is supported; " + placeholder_list(obj=self), required=False, nargs="*")
+        parser.add_argument("-I", "--input_list", type=str, help="Path to the text file(s) listing the json files to use; " + placeholder_list(obj=self), required=False, nargs="*")
         return parser
 
     def _apply_args(self, ns: argparse.Namespace):
