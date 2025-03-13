@@ -7,7 +7,7 @@ import numpy as np
 from wai.logging import LOGGING_WARNING
 from wai.common.adams.imaging.locateobjects import LocatedObjects, LocatedObject
 from wai.common.geometry import Polygon, Point
-from seppl import PlaceholderSupporter, placeholder_list
+from seppl.placeholders import PlaceholderSupporter, placeholder_list
 from seppl.io import locate_files
 from idc.api import ObjectDetectionData, locate_image
 from idc.api import Reader

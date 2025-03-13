@@ -3,7 +3,7 @@ import json
 from typing import List, Iterable, Union
 
 from wai.logging import LOGGING_WARNING
-from seppl import PlaceholderSupporter, placeholder_list
+from seppl.placeholders import PlaceholderSupporter, placeholder_list
 from seppl.io import locate_files
 from idc.api import ImageClassificationData, locate_image
 from idc.api import Reader
