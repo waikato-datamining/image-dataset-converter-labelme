@@ -1,7 +1,7 @@
 Changelog
 =========
 
-0.0.2 (????-??-??)
+0.0.2 (2025-03-14)
 ------------------
 
 - added support for placeholders: `from-labelme-ic`, `from-labelme-od`, `to-labelme-ic`, and `to-labelme-od`
