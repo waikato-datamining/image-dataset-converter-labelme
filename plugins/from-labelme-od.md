@@ -7,6 +7,7 @@ Loads the bounding box and/or polygon definitions from the associated labelme .j
 ```
 usage: from-labelme-od [-h] [-l {DEBUG,INFO,WARNING,ERROR,CRITICAL}]
                        [-N LOGGER_NAME] [-i [INPUT ...]] [-I [INPUT_LIST ...]]
+                       [--resume_from RESUME_FROM]
 
 Loads the bounding box and/or polygon definitions from the associated labelme
 .json file.
@@ -26,6 +27,9 @@ options:
                         Path to the text file(s) listing the json files to
                         use; Supported placeholders: {HOME}, {CWD}, {TMP}
                         (default: None)
+  --resume_from RESUME_FROM
+                        Glob expression matching the file to resume from,
+                        e.g., '*/012345.json' (default: None)
 ```
 
 Available placeholders:
