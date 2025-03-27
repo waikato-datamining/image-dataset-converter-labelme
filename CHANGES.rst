@@ -6,6 +6,7 @@ Changelog
 
 - added `--resume_from` option to relevant readers that allows resuming the data processing
   from the first file that matches this glob expression (e.g., `*/012345.json`)
+- new grouping support added to writers via the `--split_group` option
 
 
 0.0.2 (2025-03-14)
