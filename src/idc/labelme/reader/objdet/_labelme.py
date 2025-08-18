@@ -9,8 +9,8 @@ from wai.common.adams.imaging.locateobjects import LocatedObjects, LocatedObject
 from wai.common.geometry import Polygon, Point
 from seppl.placeholders import PlaceholderSupporter, placeholder_list
 from seppl.io import locate_files
+from kasperl.api import Reader
 from idc.api import ObjectDetectionData, locate_image
-from idc.api import Reader
 
 
 class LabelMeObjectDetectionReader(Reader, PlaceholderSupporter):

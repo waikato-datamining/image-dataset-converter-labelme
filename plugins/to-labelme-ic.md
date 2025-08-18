@@ -42,8 +42,7 @@ options:
                         {INPUT_PARENT_NAME} (default: None)
   --labels [LABEL ...]  All the available labels to store in the 'flags'
                         section of the json file. (default: None)
-  --annotations_only    Outputs only the annotations and skips the base image.
-                        (default: False)
+  --annotations_only    Outputs only the annotations. (default: False)
 ```
 
 Available placeholders:
