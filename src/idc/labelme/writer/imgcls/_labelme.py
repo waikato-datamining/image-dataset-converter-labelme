@@ -6,7 +6,7 @@ from typing import List
 
 from seppl.placeholders import placeholder_list, InputBasedPlaceholderSupporter
 from wai.logging import LOGGING_WARNING
-from kasperl.api import make_list, SplittableStreamWriter, AnnotationsOnlyWriter, add_annotations_only_param
+from kasperl.api import make_list, SplittableStreamWriter, AnnotationsOnlyWriter, add_annotations_only_writer_param
 from idc.api import ImageClassificationData
 
 
@@ -66,7 +66,7 @@ class LabelMeImageClassificationWriter(SplittableStreamWriter, AnnotationsOnlyWr
         parser = super()._create_argparser()
         parser.add_argument("-o", "--output", type=str, help="The directory to store the images/.json files in. Any defined splits get added beneath there. " + placeholder_list(obj=self), required=True)
         parser.add_argument("--labels", metavar="LABEL", type=str, default=None, help="All the available labels to store in the 'flags' section of the json file.", nargs="*")
-        add_annotations_only_param(parser)
+        add_annotations_only_writer_param(parser)
         return parser
 
     def _apply_args(self, ns: argparse.Namespace):
